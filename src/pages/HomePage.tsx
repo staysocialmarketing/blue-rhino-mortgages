@@ -74,9 +74,9 @@ export function HomePage() {
             {/* Main heading */}
             <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
               style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
-              <span className="block">Could've been</span>
-              <span className="block">any broker.</span>
-              <span className="block">Wasn't.</span>
+              <span className="block">Blue Rhino</span>
+              <span className="block">Mortgage</span>
+              <span className="block">Team.</span>
             </h1>
 
             {/* Subtext */}
@@ -102,8 +102,8 @@ export function HomePage() {
               <div className="hidden sm:flex items-center gap-3">
                 <Award className="w-8 h-8 text-white/50" />
                 <div>
-                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none">50+ Lenders</p>
-                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none mt-0.5">On Your Side</p>
+                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none">Dozens of</p>
+                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none mt-0.5">Lenders</p>
                 </div>
               </div>
             </div>
