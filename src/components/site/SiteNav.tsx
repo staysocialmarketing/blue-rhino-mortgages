@@ -14,7 +14,11 @@ export function SiteNav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => setOpen(false), [location])
+  // Reset both menu and scroll state on route change (ScrollToTop resets scrollY but doesn't fire scroll events)
+  useEffect(() => {
+    setOpen(false)
+    setScrolled(false)
+  }, [location.pathname])
 
   // All pages have dark hero headers — use white logo when not scrolled, color logo when scrolled
   const useWhiteLogo = !scrolled
