@@ -1,11 +1,7 @@
-import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
+import { ArrowUpRight, Award } from 'lucide-react'
 import { Reveal } from '@/components/site/Reveal'
 import { site, team } from '@/lib/site'
-
-gsap.registerPlugin(SplitText)
 
 const services = [
   { title: 'First-Time Buyers', desc: 'Condos, entry-level homes, and the Toronto market decoded. We help you qualify, compare, and close with confidence.' },
@@ -14,13 +10,6 @@ const services = [
   { title: 'Debt Consolidation', desc: 'Combine high-interest debt into one manageable payment. Better cash flow. One lender.' },
   { title: 'Self-Employed', desc: "Banks misread self-employed income. We understand T1s, corporate draws, and retained earnings — and we get you approved." },
   { title: 'Pre-Qualification', desc: 'Know your numbers before you shop. A clear picture of what we can do for you — no commitment required.' },
-]
-
-const stats = [
-  { value: '50+', label: 'Lender relationships' },
-  { value: '3', label: 'Expert agents' },
-  { value: 'GTA', label: 'Market expertise' },
-  { value: 'Direct', label: 'Contact always' },
 ]
 
 const steps = [
@@ -34,111 +23,101 @@ const steps = [
 
 const agents = team.filter(m => m.role === 'agent')
 
+const heroStats = [
+  { value: '50+', label: 'Lender Relationships' },
+  { value: '3', label: 'Expert Agents' },
+  { value: 'GTA', label: 'Market Expertise' },
+]
+
 export function HomePage() {
-  const headlineRef = useRef<HTMLHeadingElement>(null)
-  const subRef = useRef<HTMLParagraphElement>(null)
-  const ctaRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!headlineRef.current) return
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.15 })
-      const split = new SplitText(headlineRef.current!, { type: 'words' })
-      gsap.set(split.words, { y: 40, opacity: 0 })
-      gsap.set([subRef.current, ctaRef.current], { y: 20, opacity: 0 })
-
-      tl.to(split.words, {
-        y: 0, opacity: 1, duration: 0.7, stagger: 0.07,
-        ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-      })
-      .to(subRef.current, { y: 0, opacity: 1, duration: 0.6, ease: 'cubic-bezier(0.22, 1, 0.36, 1)' }, '-=0.35')
-      .to(ctaRef.current, { y: 0, opacity: 1, duration: 0.5, ease: 'cubic-bezier(0.22, 1, 0.36, 1)' }, '-=0.25')
-    })
-    return () => ctx.revert()
-  }, [])
-
   return (
     <>
-      {/* Hero */}
-      <section
-        id="hero-section"
-        className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 40%, #1a5fb4 100%)' }}
-      >
-        {/* Subtle grid texture */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-        }} />
+      {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
+      <section className="relative h-screen w-full overflow-hidden flex flex-col">
 
-        {/* Rhino watermark right */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 flex items-center justify-center pointer-events-none select-none opacity-[0.06]">
-          <img src="/rhino-mark.svg" alt="" className="w-[520px] h-auto" />
-        </div>
+        {/* Background video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-        <div className="container-x mx-auto max-w-7xl w-full relative z-10 pt-36 pb-28">
-          <div className="max-w-3xl">
-            <p style={{ color: '#7fb8e0' }} className="text-xs font-body font-semibold uppercase tracking-[0.3em] mb-8">
-              Toronto · GTA · Mortgage Team
-            </p>
-            <h1
-              ref={headlineRef}
-              className="font-display font-bold text-white leading-[1.05] text-5xl md:text-6xl xl:text-7xl"
-              style={{ opacity: 0 }}
-            >
-              Could've been any broker. Wasn't.
+        {/* Overlay */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(8,31,74,0.65) 0%, rgba(13,61,138,0.45) 50%, rgba(8,31,74,0.80) 100%)' }} />
+
+        {/* Hero content — vertically centered, left-aligned */}
+        <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
+          <div className="max-w-4xl">
+
+            {/* Tagline */}
+            <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
+              <img src="/rhino-mark.svg" alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
+              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">
+                Toronto Mortgage Team
+              </p>
+            </div>
+
+            {/* Main heading */}
+            <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
+              style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
+              <span className="block">Could've been</span>
+              <span className="block">any broker.</span>
+              <span className="block">Wasn't.</span>
             </h1>
-            <p
-              ref={subRef}
-              className="mt-8 font-body text-white/70 text-lg md:text-xl leading-relaxed max-w-xl"
-              style={{ opacity: 0 }}
-            >
-              Three agents. 50+ lenders. Direct contact every time. We work with Toronto's entrepreneurs, first-time buyers, and growing families.
+
+            {/* Subtext */}
+            <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
+              We work with Toronto's entrepreneurs, first-time buyers, and growing families —{' '}
+              <strong className="text-white font-semibold">direct contact, real advice, no hand-offs.</strong>
             </p>
-            <div ref={ctaRef} className="mt-10 flex flex-wrap gap-4" style={{ opacity: 0 }}>
-              <a
-                href={`tel:${site.phone.replace(/-/g, '')}`}
-                className="inline-flex items-center bg-white font-body font-semibold px-7 py-4 transition-colors text-sm tracking-wide"
-                style={{ color: '#1a5fb4' }}
+
+            {/* CTA row */}
+            <div className="animate-fade-up-delay-3 mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-2 bg-white font-body font-semibold px-5 sm:px-7 py-3 sm:py-4 text-[11px] sm:text-xs tracking-widest uppercase transition-colors"
+                style={{ color: '#0d3d8a' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#e6f0f8'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
               >
-                Call {site.phone}
-              </a>
-              <Link
-                to="/about"
-                className="inline-flex items-center border font-body font-semibold px-7 py-4 transition-colors text-sm tracking-wide text-white"
-                style={{ borderColor: 'rgba(255,255,255,0.3)' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.7)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)' }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.3)'; (e.currentTarget as HTMLElement).style.background = '' }}
-              >
-                Meet the team
+                Meet the Team
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
+
+              {/* Award badge — hidden mobile */}
+              <div className="hidden sm:flex items-center gap-3">
+                <Award className="w-8 h-8 text-white/50" />
+                <div>
+                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none">50+ Lenders</p>
+                  <p className="text-white/60 text-xs tracking-wider uppercase leading-none mt-0.5">On Your Side</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 inset-x-0 h-32 pointer-events-none"
-          style={{ background: 'linear-gradient(to top, #f4f7fa, transparent)' }} />
-      </section>
-
-      {/* Stats */}
-      <section style={{ background: '#e6f0f8', borderTop: '1px solid rgba(26,95,180,0.1)', borderBottom: '1px solid rgba(26,95,180,0.1)' }} className="py-10">
-        <div className="container-x mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 80}>
-                <div className="text-center">
-                  <p className="font-display font-bold text-3xl" style={{ color: '#1a5fb4' }}>{s.value}</p>
-                  <p className="mt-1 font-body text-xs uppercase tracking-wider" style={{ color: '#1a1a1a', opacity: 0.5 }}>{s.label}</p>
-                </div>
-              </Reveal>
+        {/* Stats row — pinned to bottom of hero */}
+        <div className="animate-fade-up-delay-4 relative z-10 px-6 sm:px-10 lg:px-16 pb-10 sm:pb-12">
+          <div className="flex flex-wrap gap-6 sm:gap-12 lg:gap-16">
+            {heroStats.map((s) => (
+              <div key={s.label}>
+                <p className="font-body text-white text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none">
+                  {s.value}
+                </p>
+                <p className="font-body text-white/50 text-[9px] sm:text-xs tracking-widest uppercase mt-1">
+                  {s.label}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
+      {/* ─── TEAM ─────────────────────────────────────────────────────────── */}
       <section className="py-24 container-x">
         <div className="mx-auto max-w-7xl">
           <Reveal>
@@ -192,7 +171,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
       <section className="py-24" style={{ background: '#e6f0f8' }}>
         <div className="container-x mx-auto max-w-7xl">
           <Reveal>
@@ -223,7 +202,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* ─── HOW IT WORKS ─────────────────────────────────────────────────── */}
       <section className="py-24" style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
         <div className="container-x mx-auto max-w-7xl">
           <Reveal>
@@ -247,18 +226,18 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Tools strip */}
+      {/* ─── TOOLS STRIP ──────────────────────────────────────────────────── */}
       <section className="py-20" style={{ background: '#f4f7fa', borderBottom: '1px solid rgba(26,95,180,0.08)' }}>
         <div className="container-x mx-auto max-w-7xl">
           <Reveal>
             <div className="grid gap-6 sm:grid-cols-3">
               {[
-                { title: 'Mortgage Calculators', desc: 'Payment, affordability, CMHC, and more. Know your numbers before you meet with us.', href: '/calculators', cta: 'Open calculators' },
+                { title: 'Mortgage Calculators', desc: 'Payment, affordability, CMHC, and more. Know your numbers before we talk.', href: '/calculators', cta: 'Open calculators' },
                 { title: 'Should I Refinance?', desc: 'Answer a few questions. We\'ll tell you if it makes sense — and by how much.', href: '/should-i-refinance', cta: 'Start the flow' },
                 { title: 'Common Questions', desc: 'Rates, pre-approval, self-employed income, closing costs — answered plainly.', href: '/faq', cta: 'Browse FAQ' },
               ].map((tool, i) => (
                 <Reveal key={tool.title} delay={i * 80}>
-                  <Link to={tool.href} className="block bg-white border p-8 transition-all group"
+                  <Link to={tool.href} className="block bg-white border p-8 transition-all"
                     style={{ borderColor: 'rgba(26,95,180,0.1)' }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,95,180,0.4)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(26,95,180,0.07)' }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,95,180,0.1)'; (e.currentTarget as HTMLElement).style.boxShadow = '' }}
@@ -274,7 +253,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ─── CTA ──────────────────────────────────────────────────────────── */}
       <section className="py-24" style={{ background: '#1a5fb4' }}>
         <div className="container-x mx-auto max-w-7xl text-center">
           <Reveal>
