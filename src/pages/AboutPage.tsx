@@ -55,7 +55,7 @@ export function AboutPage() {
             </Reveal>
             <Reveal delay={140}>
               <p className="font-body leading-relaxed" style={{ color: '#1a1a1a', opacity: 0.7 }}>
-                The team is built around entrepreneurs, self-employed professionals, first-time buyers, and anyone whose situation the banks haven't bothered to understand. We operate under Premiere Mortgage Centre, giving every client access to 50+ lenders — banks, credit unions, mono-lenders, and alternative options.
+                The team is built around entrepreneurs, self-employed professionals, first-time buyers, and anyone whose situation the banks haven't bothered to understand. We operate under Premiere Mortgage Centre, giving every client access to dozens of lenders — banks, credit unions, mono-lenders, and alternative options.
               </p>
             </Reveal>
             <Reveal delay={200}>

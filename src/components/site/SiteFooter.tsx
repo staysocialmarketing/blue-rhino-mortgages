@@ -11,7 +11,7 @@ export function SiteFooter() {
             <img src="/logo-color.png" alt="Blue Rhino Mortgages" className="h-12 w-auto object-contain mb-6"
               style={{ filter: 'brightness(0) invert(1)', opacity: 0.88 }} />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: 'rgba(255,255,255,0.6)' }}>
-              Toronto's mortgage team for entrepreneurs, first-time buyers, and growing families. Powered by 50+ lender relationships.
+              Toronto's mortgage team for entrepreneurs, first-time buyers, and growing families. Powered by dozens of lender relationships.
             </p>
             <p className="mt-6 text-sm font-display font-semibold italic" style={{ color: '#7fb8e0' }}>
               "{site.tagline}"

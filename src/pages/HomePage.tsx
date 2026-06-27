@@ -15,7 +15,7 @@ const services = [
 const steps = [
   { n: '01', title: 'The conversation', body: 'A relaxed call about where you are and what you\'re working toward. No forms, no pressure.' },
   { n: '02', title: 'The review', body: 'We look at the full picture: income, debts, goals, and the lender landscape for your situation right now.' },
-  { n: '03', title: 'The search', body: 'We shop across 50+ lenders and structure what genuinely fits — not what\'s easiest to place.' },
+  { n: '03', title: 'The search', body: 'We shop across dozens of lenders and structure what genuinely fits — not what\'s easiest to place.' },
   { n: '04', title: 'Your options', body: 'You see real choices, explained plainly. Nothing moves until you\'re comfortable.' },
   { n: '05', title: 'The close', body: 'We handle the paperwork, coordinate with the lender, and keep you updated at every step.' },
   { n: '06', title: 'After closing', body: 'The relationship doesn\'t end at closing. We stay available for renewals, refinancing, and anything that comes up.' },
@@ -24,16 +24,9 @@ const steps = [
 const agents = team.filter(m => m.role === 'agent')
 
 const heroStats = [
-  { value: '50+', label: 'Lender Relationships' },
+  { value: 'Dozens', label: 'Of Lenders' },
   { value: '3', label: 'Expert Agents' },
   { value: 'GTA', label: 'Market Expertise' },
-]
-
-// Curated Toronto Unsplash photo IDs
-const TORONTO_PHOTOS = [
-  'photo-1524661135-423995f22d0b', // CN Tower / skyline
-  'photo-1555443805-658637491dd4', // Toronto waterfront
-  'photo-1579349443343-73c4f44d2d52', // Toronto at dusk
 ]
 
 export function HomePage() {
@@ -44,8 +37,8 @@ export function HomePage() {
         className="relative h-screen w-full overflow-hidden flex flex-col"
         style={{ background: 'linear-gradient(135deg, #081f4a 0%, #0d3d8a 60%, #1a5fb4 100%)' }}
       >
-        {/* Video — right side panel, ~58% width on desktop */}
-        <div className="absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
+        {/* Video — starts 20% from top, right-side panel on desktop */}
+        <div className="absolute top-[20%] bottom-0 right-0 w-full md:w-[58%] pointer-events-none">
           <video
             className="w-full h-full object-cover"
             src="/hero-video.mp4"
@@ -54,12 +47,15 @@ export function HomePage() {
             loop
             playsInline
           />
-          {/* Gradient fade from left — blends video into dark bg */}
+          {/* Gradient fade from left */}
           <div className="absolute inset-0"
             style={{ background: 'linear-gradient(to right, #081f4a 0%, rgba(8,31,74,0.5) 35%, transparent 70%)' }} />
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-40"
             style={{ background: 'linear-gradient(to top, #081f4a, transparent)' }} />
+          {/* Top fade — blends where video starts */}
+          <div className="absolute inset-x-0 top-0 h-24"
+            style={{ background: 'linear-gradient(to bottom, #0d3d8a, transparent)' }} />
         </div>
 
         {/* Mobile dim overlay */}
@@ -201,65 +197,10 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ─── TORONTO SKYLINE BANNER ───────────────────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ minHeight: '380px' }}>
-        {/* Toronto skyline photo — stack 3 as a collage strip */}
-        <div className="absolute inset-0 grid grid-cols-3">
-          {TORONTO_PHOTOS.map((id) => (
-            <div key={id} className="relative overflow-hidden">
-              <img
-                src={`https://images.unsplash.com/${id}?w=800&q=75&fit=crop&crop=center`}
-                alt="Toronto skyline"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Dark overlay with gradient */}
-        <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.92) 0%, rgba(8,31,74,0.75) 40%, rgba(8,31,74,0.55) 100%)' }} />
-
-        {/* Rhino watermark */}
-        <div className="absolute right-8 bottom-0 opacity-[0.07] pointer-events-none select-none">
-          <img src="/rhino-mark.svg" alt="" className="w-72 h-72" />
-        </div>
-
-        <div className="relative z-10 container-x mx-auto max-w-7xl flex items-center" style={{ minHeight: '380px' }}>
-          <Reveal className="max-w-xl">
-            <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>Our market</p>
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight">
-              We know Toronto.
-            </h2>
-            <p className="mt-5 font-body text-white/70 leading-relaxed max-w-md">
-              From Leslieville to Lawrence Park, Liberty Village to the Annex. Condos, freehold, income properties — we've worked the full GTA market and know what lenders look for in each pocket.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-6">
-              {[
-                { label: 'Downtown Core' },
-                { label: 'East End' },
-                { label: 'West End' },
-                { label: 'North York' },
-                { label: 'Scarborough' },
-                { label: 'Etobicoke' },
-              ].map(n => (
-                <span key={n.label} className="font-body text-xs tracking-widest uppercase text-white/50">{n.label}</span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ─── HOW IT WORKS (dark blue + rhino overlay) ─────────────────────── */}
-      <section className="relative py-24 overflow-hidden"
+      {/* ─── HOW IT WORKS ─────────────────────────────────────────────────── */}
+      <section className="py-24"
         style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
-        {/* Rhino watermark — bottom right */}
-        <div className="absolute -bottom-16 -right-16 opacity-[0.06] pointer-events-none select-none">
-          <img src="/rhino-mark.svg" alt="" style={{ width: '520px', height: '520px' }} />
-        </div>
-
-        <div className="container-x mx-auto max-w-7xl relative z-10">
+        <div className="container-x mx-auto max-w-7xl">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>The process</p>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-xl leading-tight">How we work with you</h2>
@@ -308,14 +249,9 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ─── CTA (dark + rhino overlay) ───────────────────────────────────── */}
-      <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
-        {/* Rhino watermark — top left */}
-        <div className="absolute -top-20 -left-20 opacity-[0.06] pointer-events-none select-none">
-          <img src="/rhino-mark.svg" alt="" style={{ width: '480px', height: '480px' }} />
-        </div>
-
-        <div className="container-x mx-auto max-w-7xl text-center relative z-10">
+      {/* ─── CTA ──────────────────────────────────────────────────────────── */}
+      <section className="py-24" style={{ background: '#1a5fb4' }}>
+        <div className="container-x mx-auto max-w-7xl text-center">
           <Reveal>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-2xl mx-auto leading-tight">
               Ready to find out what we can do?

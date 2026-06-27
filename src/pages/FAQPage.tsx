@@ -19,7 +19,7 @@ const faq: FAQSection[] = [
     items: [
       {
         q: 'What does a mortgage agent actually do?',
-        a: 'We shop on your behalf. Instead of walking into one bank and accepting whatever rate they offer, we access 50+ lenders — banks, credit unions, mono-lenders, and alternative options — and find the best fit for your specific situation. We handle the application, the paperwork, and the lender coordination. You make the decisions. We do the work.',
+        a: 'We shop on your behalf. Instead of walking into one bank and accepting whatever rate they offer, we access dozens of lenders — banks, credit unions, mono-lenders, and alternative options — and find the best fit for your specific situation. We handle the application, the paperwork, and the lender coordination. You make the decisions. We do the work.',
       },
       {
         q: 'How do you get paid?',
@@ -40,7 +40,7 @@ const faq: FAQSection[] = [
     items: [
       {
         q: 'Can you get me a better rate than my bank?',
-        a: 'In most cases, yes. Banks negotiate with themselves. We\'re negotiating on behalf of our book across 50+ lenders — that creates real leverage. Even a 0.25% difference on a $600K mortgage over 5 years is roughly $7,000 in interest. The bigger win is often the overall structure — rate type, term, prepayment privileges, and portability — not just the rate alone.',
+        a: 'In most cases, yes. Banks negotiate with themselves. We\'re negotiating on behalf of our book across dozens of lenders — that creates real leverage. Even a 0.25% difference on a $600K mortgage over 5 years is roughly $7,000 in interest. The bigger win is often the overall structure — rate type, term, prepayment privileges, and portability — not just the rate alone.',
       },
       {
         q: 'Fixed or variable — which should I choose?',

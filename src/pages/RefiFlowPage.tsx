@@ -94,7 +94,7 @@ function getResult(answers: Answers) {
   if (highRate && (remaining === 'under6' || remaining === '6to12')) {
     return {
       verdict: 'Strong case for refinancing.',
-      detail: 'A high rate with your term ending soon is exactly the scenario where refinancing makes the most sense. You\'re close to the end of your penalty window, and today\'s lender landscape likely has better options for you. We\'d want to look at lender options across 50+ sources and structure the best fit.',
+      detail: 'A high rate with your term ending soon is exactly the scenario where refinancing makes the most sense. You\'re close to the end of your penalty window, and today\'s lender landscape likely has better options for you. We\'d want to look at lender options across dozens of sources and structure the best fit.',
       cta: 'Let\'s find you better options.',
       tone: 'positive',
     }
