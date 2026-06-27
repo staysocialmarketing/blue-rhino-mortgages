@@ -33,25 +33,35 @@ export function HomePage() {
   return (
     <>
       {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
-      <section className="relative h-screen w-full overflow-hidden flex flex-col">
+      <section
+        className="relative h-screen w-full overflow-hidden flex flex-col"
+        style={{ background: 'linear-gradient(135deg, #081f4a 0%, #0d3d8a 60%, #1a5fb4 100%)' }}
+      >
+        {/* Video — right side panel, ~55% width on desktop, hidden on mobile */}
+        <div className="absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
+          <video
+            className="w-full h-full object-cover"
+            src="/hero-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* Gradient fade from left — blends video into dark bg */}
+          <div className="absolute inset-0"
+            style={{ background: 'linear-gradient(to right, #081f4a 0%, rgba(8,31,74,0.5) 35%, transparent 70%)' }} />
+          {/* Bottom fade */}
+          <div className="absolute inset-x-0 bottom-0 h-40"
+            style={{ background: 'linear-gradient(to top, #081f4a, transparent)' }} />
+        </div>
 
-        {/* Background video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-
-        {/* Overlay */}
-        <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, rgba(8,31,74,0.65) 0%, rgba(13,61,138,0.45) 50%, rgba(8,31,74,0.80) 100%)' }} />
+        {/* On mobile: dim overlay so text stays readable over full-bleed video */}
+        <div className="absolute inset-0 md:hidden"
+          style={{ background: 'rgba(8,31,74,0.72)' }} />
 
         {/* Hero content — vertically centered, left-aligned */}
         <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl md:max-w-[52%]">
 
             {/* Tagline */}
             <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
