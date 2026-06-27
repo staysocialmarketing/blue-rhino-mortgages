@@ -35,26 +35,24 @@ export function HomePage() {
       {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
       <section
         className="relative h-screen w-full overflow-hidden flex flex-col"
-        style={{ background: 'linear-gradient(135deg, #081f4a 0%, #0d3d8a 60%, #1a5fb4 100%)' }}
       >
-        {/* Video — dropped 15% from top, wider panel on desktop */}
-        <div className="absolute top-[15%] bottom-0 right-0 w-full md:w-[68%] pointer-events-none">
-          <video
-            className="w-full h-full object-cover"
-            src="/hero-video.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-          {/* Gradient fade from left */}
-          <div className="absolute inset-0"
-            style={{ background: 'linear-gradient(to right, #081f4a 0%, rgba(8,31,74,0.55) 30%, transparent 65%)' }} />
-        </div>
+        {/* Video — full bleed, subject pushed right via object-position */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          style={{ objectPosition: '70% center' }}
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-        {/* Mobile dim overlay */}
-        <div className="absolute inset-0 md:hidden"
-          style={{ background: 'rgba(8,31,74,0.72)' }} />
+        {/* Overlay — dark on left for content, thins out right so video reads through */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.92) 0%, rgba(8,31,74,0.80) 28%, rgba(8,31,74,0.45) 52%, rgba(8,31,74,0.15) 72%, transparent 100%)' }} />
+        {/* Bottom darkening for stats */}
+        <div className="absolute inset-x-0 bottom-0 h-48"
+          style={{ background: 'linear-gradient(to top, rgba(8,31,74,0.85), transparent)' }} />
 
         {/* Hero content */}
         <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
