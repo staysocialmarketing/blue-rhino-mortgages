@@ -37,8 +37,8 @@ export function HomePage() {
         className="relative h-screen w-full overflow-hidden flex flex-col"
         style={{ background: 'linear-gradient(135deg, #081f4a 0%, #0d3d8a 60%, #1a5fb4 100%)' }}
       >
-        {/* Video — full height, wider panel on desktop */}
-        <div className="absolute inset-y-0 right-0 w-full md:w-[68%] pointer-events-none">
+        {/* Video — dropped 15% from top, wider panel on desktop */}
+        <div className="absolute top-[15%] bottom-0 right-0 w-full md:w-[68%] pointer-events-none">
           <video
             className="w-full h-full object-cover"
             src="/hero-video.mp4"
@@ -53,6 +53,9 @@ export function HomePage() {
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-40"
             style={{ background: 'linear-gradient(to top, #081f4a, transparent)' }} />
+          {/* Top fade — softens where video starts */}
+          <div className="absolute inset-x-0 top-0 h-20"
+            style={{ background: 'linear-gradient(to bottom, #0d3d8a, transparent)' }} />
         </div>
 
         {/* Mobile dim overlay */}
