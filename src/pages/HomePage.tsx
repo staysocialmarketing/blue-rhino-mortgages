@@ -205,7 +205,7 @@ export function HomePage() {
       <section className="relative overflow-hidden" style={{ minHeight: '380px' }}>
         {/* Toronto skyline photo — stack 3 as a collage strip */}
         <div className="absolute inset-0 grid grid-cols-3">
-          {TORONTO_PHOTOS.map((id, i) => (
+          {TORONTO_PHOTOS.map((id) => (
             <div key={id} className="relative overflow-hidden">
               <img
                 src={`https://images.unsplash.com/${id}?w=800&q=75&fit=crop&crop=center`}
