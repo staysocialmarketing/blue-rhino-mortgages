@@ -8,6 +8,9 @@ import { AboutPage } from '@/pages/AboutPage'
 import { ServicesPage } from '@/pages/ServicesPage'
 import { ContactPage } from '@/pages/ContactPage'
 import { ResourcesPage } from '@/pages/ResourcesPage'
+import { CalculatorsPage } from '@/pages/CalculatorsPage'
+import { RefiFlowPage } from '@/pages/RefiFlowPage'
+import { FAQPage } from '@/pages/FAQPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -34,6 +37,9 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/calculators" element={<CalculatorsPage />} />
+          <Route path="/should-i-refinance" element={<RefiFlowPage />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Routes>
       </main>
       <SiteFooter />

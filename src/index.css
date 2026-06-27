@@ -6,8 +6,8 @@
   --color-bg: #f4f7fa;
   --color-accent-light: #e6f0f8;
   --color-body: #1a1a1a;
-  --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Lora", serif;
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

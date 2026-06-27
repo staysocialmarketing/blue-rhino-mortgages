@@ -65,8 +65,8 @@ export function ContactPage() {
       <section className="py-20 border-t" style={{ background: '#e6f0f8', borderColor: 'rgba(26,95,180,0.1)' }}>
         <div className="container-x mx-auto max-w-7xl text-center">
           <Reveal>
-            <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>Mortgage Agent, Level 1</p>
-            <p className="font-display font-semibold" style={{ color: '#1a1a1a' }}>{site.agent}</p>
+            <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>Blue Rhino Mortgages</p>
+            <p className="font-display font-semibold" style={{ color: '#1a1a1a' }}>{site.brokerage}</p>
             <p className="mt-2 text-sm" style={{ color: '#1a1a1a', opacity: 0.6 }}>{site.compliance}</p>
           </Reveal>
         </div>
