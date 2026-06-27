@@ -33,13 +33,25 @@ export function SiteNav() {
       }}
     >
       <div className="container-x mx-auto max-w-7xl flex items-center justify-between h-20">
-        {/* Logo — swaps based on scroll */}
+        {/* Logo — SVG mark + text on dark, full composite PNG on light */}
         <Link to="/" className="flex-shrink-0">
-          <img
-            src={useWhiteLogo ? '/logo-white.png' : '/logo-color.png'}
-            alt="Blue Rhino Mortgages"
-            className="h-10 w-auto object-contain transition-opacity duration-300"
-          />
+          {useWhiteLogo ? (
+            <div className="flex items-center gap-3">
+              <img src="/rhino-mark.svg" alt="" className="h-9 w-9"
+                style={{ filter: 'brightness(0) invert(1)', opacity: 0.92 }} />
+              <div className="leading-none">
+                <p className="font-display font-bold text-white text-[17px] tracking-tight">Blue Rhino</p>
+                <p className="font-body text-[9px] font-semibold tracking-[0.22em] uppercase mt-0.5"
+                  style={{ color: '#7fb8e0' }}>Mortgages</p>
+              </div>
+            </div>
+          ) : (
+            <img
+              src="/logo-color.png"
+              alt="Blue Rhino Mortgages"
+              className="h-10 w-auto object-contain"
+            />
+          )}
         </Link>
 
         {/* Desktop nav */}
