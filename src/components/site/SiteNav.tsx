@@ -38,7 +38,7 @@ export function SiteNav() {
           <img
             src="/logo-color.png"
             alt="Blue Rhino Mortgages"
-            className="h-[50px] w-auto object-contain transition-all duration-300"
+            className="h-10 w-auto object-contain transition-all duration-300"
             style={useWhiteLogo
               ? { filter: 'brightness(0) invert(1)', opacity: 0.88 }
               : {}}

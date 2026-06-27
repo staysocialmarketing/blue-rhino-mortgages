@@ -29,6 +29,13 @@ const heroStats = [
   { value: 'GTA', label: 'Market Expertise' },
 ]
 
+// Curated Toronto Unsplash photo IDs
+const TORONTO_PHOTOS = [
+  'photo-1524661135-423995f22d0b', // CN Tower / skyline
+  'photo-1555443805-658637491dd4', // Toronto waterfront
+  'photo-1579349443343-73c4f44d2d52', // Toronto at dusk
+]
+
 export function HomePage() {
   return (
     <>
@@ -37,7 +44,7 @@ export function HomePage() {
         className="relative h-screen w-full overflow-hidden flex flex-col"
         style={{ background: 'linear-gradient(135deg, #081f4a 0%, #0d3d8a 60%, #1a5fb4 100%)' }}
       >
-        {/* Video — right side panel, ~55% width on desktop, hidden on mobile */}
+        {/* Video — right side panel, ~58% width on desktop */}
         <div className="absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
           <video
             className="w-full h-full object-cover"
@@ -55,23 +62,18 @@ export function HomePage() {
             style={{ background: 'linear-gradient(to top, #081f4a, transparent)' }} />
         </div>
 
-        {/* On mobile: dim overlay so text stays readable over full-bleed video */}
+        {/* Mobile dim overlay */}
         <div className="absolute inset-0 md:hidden"
           style={{ background: 'rgba(8,31,74,0.72)' }} />
 
-        {/* Hero content — vertically centered, left-aligned */}
+        {/* Hero content */}
         <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
           <div className="max-w-4xl md:max-w-[52%]">
-
-            {/* Tagline */}
             <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
               <img src="/rhino-mark.svg" alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
-              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">
-                Toronto Mortgage Team
-              </p>
+              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto Mortgage Team</p>
             </div>
 
-            {/* Main heading */}
             <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
               style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
               <span className="block">Blue Rhino</span>
@@ -79,13 +81,11 @@ export function HomePage() {
               <span className="block">Team.</span>
             </h1>
 
-            {/* Subtext */}
             <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
               We work with Toronto's entrepreneurs, first-time buyers, and growing families —{' '}
               <strong className="text-white font-semibold">direct contact, real advice, no hand-offs.</strong>
             </p>
 
-            {/* CTA row */}
             <div className="animate-fade-up-delay-3 mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
               <Link
                 to="/about"
@@ -97,8 +97,6 @@ export function HomePage() {
                 Meet the Team
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
-
-              {/* Award badge — hidden mobile */}
               <div className="hidden sm:flex items-center gap-3">
                 <Award className="w-8 h-8 text-white/50" />
                 <div>
@@ -110,17 +108,13 @@ export function HomePage() {
           </div>
         </div>
 
-        {/* Stats row — pinned to bottom of hero */}
+        {/* Stats — pinned to bottom */}
         <div className="animate-fade-up-delay-4 relative z-10 px-6 sm:px-10 lg:px-16 pb-10 sm:pb-12">
           <div className="flex flex-wrap gap-6 sm:gap-12 lg:gap-16">
             {heroStats.map((s) => (
               <div key={s.label}>
-                <p className="font-body text-white text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none">
-                  {s.value}
-                </p>
-                <p className="font-body text-white/50 text-[9px] sm:text-xs tracking-widest uppercase mt-1">
-                  {s.label}
-                </p>
+                <p className="font-body text-white text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none">{s.value}</p>
+                <p className="font-body text-white/50 text-[9px] sm:text-xs tracking-widest uppercase mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -148,25 +142,20 @@ export function HomePage() {
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,95,180,0.4)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(26,95,180,0.08)' }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,95,180,0.1)'; (e.currentTarget as HTMLElement).style.boxShadow = '' }}
                 >
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 flex-shrink-0"
-                    style={{ background: '#e6f0f8' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 flex-shrink-0" style={{ background: '#e6f0f8' }}>
                     <img src="/rhino-mark.svg" alt="" className="w-8 h-8 opacity-40" />
                   </div>
                   <h3 className="font-display font-bold text-xl" style={{ color: '#1a1a1a' }}>{member.name}</h3>
                   <p className="font-body text-xs mt-1 mb-4" style={{ color: '#1a5fb4' }}>{member.title}</p>
                   <p className="font-body text-sm leading-relaxed flex-1" style={{ color: '#1a1a1a', opacity: 0.65 }}>{member.bio}</p>
-                  <p className="font-body text-xs mt-4 pt-4" style={{ borderTop: '1px solid rgba(26,95,180,0.1)', color: '#7fb8e0' }}>
-                    {member.specialty}
-                  </p>
+                  <p className="font-body text-xs mt-4 pt-4" style={{ borderTop: '1px solid rgba(26,95,180,0.1)', color: '#7fb8e0' }}>{member.specialty}</p>
                   {member.email && (
                     <a href={`mailto:${member.email}`}
                       className="mt-3 font-body text-xs transition-colors"
                       style={{ color: 'rgba(26,26,26,0.45)' }}
                       onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#1a5fb4'}
                       onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'rgba(26,26,26,0.45)'}
-                    >
-                      {member.email}
-                    </a>
+                    >{member.email}</a>
                   )}
                 </div>
               </Reveal>
@@ -212,9 +201,65 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
-        <div className="container-x mx-auto max-w-7xl">
+      {/* ─── TORONTO SKYLINE BANNER ───────────────────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ minHeight: '380px' }}>
+        {/* Toronto skyline photo — stack 3 as a collage strip */}
+        <div className="absolute inset-0 grid grid-cols-3">
+          {TORONTO_PHOTOS.map((id, i) => (
+            <div key={id} className="relative overflow-hidden">
+              <img
+                src={`https://images.unsplash.com/${id}?w=800&q=75&fit=crop&crop=center`}
+                alt="Toronto skyline"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.92) 0%, rgba(8,31,74,0.75) 40%, rgba(8,31,74,0.55) 100%)' }} />
+
+        {/* Rhino watermark */}
+        <div className="absolute right-8 bottom-0 opacity-[0.07] pointer-events-none select-none">
+          <img src="/rhino-mark.svg" alt="" className="w-72 h-72" />
+        </div>
+
+        <div className="relative z-10 container-x mx-auto max-w-7xl flex items-center" style={{ minHeight: '380px' }}>
+          <Reveal className="max-w-xl">
+            <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>Our market</p>
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight">
+              We know Toronto.
+            </h2>
+            <p className="mt-5 font-body text-white/70 leading-relaxed max-w-md">
+              From Leslieville to Lawrence Park, Liberty Village to the Annex. Condos, freehold, income properties — we've worked the full GTA market and know what lenders look for in each pocket.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-6">
+              {[
+                { label: 'Downtown Core' },
+                { label: 'East End' },
+                { label: 'West End' },
+                { label: 'North York' },
+                { label: 'Scarborough' },
+                { label: 'Etobicoke' },
+              ].map(n => (
+                <span key={n.label} className="font-body text-xs tracking-widest uppercase text-white/50">{n.label}</span>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ─── HOW IT WORKS (dark blue + rhino overlay) ─────────────────────── */}
+      <section className="relative py-24 overflow-hidden"
+        style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
+        {/* Rhino watermark — bottom right */}
+        <div className="absolute -bottom-16 -right-16 opacity-[0.06] pointer-events-none select-none">
+          <img src="/rhino-mark.svg" alt="" style={{ width: '520px', height: '520px' }} />
+        </div>
+
+        <div className="container-x mx-auto max-w-7xl relative z-10">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>The process</p>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-xl leading-tight">How we work with you</h2>
@@ -263,9 +308,14 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ─── CTA ──────────────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: '#1a5fb4' }}>
-        <div className="container-x mx-auto max-w-7xl text-center">
+      {/* ─── CTA (dark + rhino overlay) ───────────────────────────────────── */}
+      <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
+        {/* Rhino watermark — top left */}
+        <div className="absolute -top-20 -left-20 opacity-[0.06] pointer-events-none select-none">
+          <img src="/rhino-mark.svg" alt="" style={{ width: '480px', height: '480px' }} />
+        </div>
+
+        <div className="container-x mx-auto max-w-7xl text-center relative z-10">
           <Reveal>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-2xl mx-auto leading-tight">
               Ready to find out what we can do?
@@ -279,17 +329,13 @@ export function HomePage() {
                 style={{ color: '#1a5fb4' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#e6f0f8'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
-              >
-                {site.phone}
-              </a>
+              >{site.phone}</a>
               <a href={`mailto:${site.email}`}
                 className="border font-body font-semibold text-white px-8 py-4 transition-colors text-sm tracking-wide"
                 style={{ borderColor: 'rgba(255,255,255,0.4)' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.8)'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.4)'}
-              >
-                {site.email}
-              </a>
+              >{site.email}</a>
             </div>
           </Reveal>
         </div>
