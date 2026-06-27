@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
-import { RhinoCursor } from '@/components/site/RhinoCursor'
+import { RhinoParticles } from '@/components/site/RhinoParticles'
 import { Reveal } from '@/components/site/Reveal'
 import { site } from '@/lib/site'
 
@@ -109,7 +109,7 @@ export function HomePage() {
           </div>
         </div>
 
-        <RhinoCursor />
+        <RhinoParticles />
 
         <div className="absolute bottom-0 inset-x-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to top, #f4f7fa, transparent)' }} />
