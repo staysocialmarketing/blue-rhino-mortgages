@@ -50,12 +50,6 @@ export function HomePage() {
           {/* Gradient fade from left */}
           <div className="absolute inset-0"
             style={{ background: 'linear-gradient(to right, #081f4a 0%, rgba(8,31,74,0.55) 30%, transparent 65%)' }} />
-          {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-40"
-            style={{ background: 'linear-gradient(to top, #081f4a, transparent)' }} />
-          {/* Top fade — softens where video starts */}
-          <div className="absolute inset-x-0 top-0 h-20"
-            style={{ background: 'linear-gradient(to bottom, #0d3d8a, transparent)' }} />
         </div>
 
         {/* Mobile dim overlay */}
