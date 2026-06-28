@@ -39,7 +39,7 @@ export function HomePage() {
         {/* Video — full bleed, subject pushed right via object-position */}
         <video
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{ objectPosition: '70% center' }}
+          style={{ objectPosition: '85% center' }}
           src="/hero-video.mp4"
           autoPlay
           muted
@@ -49,7 +49,7 @@ export function HomePage() {
 
         {/* Overlay — dark on left for content, thins out right so video reads through */}
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.92) 0%, rgba(8,31,74,0.80) 28%, rgba(8,31,74,0.45) 52%, rgba(8,31,74,0.15) 72%, transparent 100%)' }} />
+          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.96) 0%, rgba(8,31,74,0.92) 35%, rgba(8,31,74,0.55) 58%, rgba(8,31,74,0.15) 78%, transparent 100%)' }} />
         {/* Bottom darkening for stats */}
         <div className="absolute inset-x-0 bottom-0 h-48"
           style={{ background: 'linear-gradient(to top, rgba(8,31,74,0.85), transparent)' }} />
