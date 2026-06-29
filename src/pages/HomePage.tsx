@@ -32,26 +32,29 @@ const heroStats = [
 export function HomePage() {
   return (
     <>
-      {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
+      {/* ─── HERO ────────────────────────────────────────────────────────── */}
       <section
         className="relative h-screen w-full overflow-hidden flex flex-col"
+        style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}
       >
-        {/* Video — full bleed background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{ objectPosition: '72% 50%' }}
-          src="/hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
+        {/* Rhino mascot — positioned right, shifted down */}
+        <img
+          src="/rhino-mascot-dark.jpg"
+          alt=""
+          aria-hidden
+          className="absolute pointer-events-none hidden md:block"
+          style={{
+            mixBlendMode: 'screen',
+            width: '55%',
+            maxWidth: '750px',
+            right: '-5%',
+            top: '20%',
+            objectFit: 'contain',
+          }}
         />
 
-        {/* Overlay — dark on left for text readability */}
-        <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.96) 0%, rgba(8,31,74,0.92) 32%, rgba(8,31,74,0.45) 52%, rgba(8,31,74,0.10) 70%, transparent 100%)' }} />
         {/* Bottom darkening for stats */}
-        <div className="absolute inset-x-0 bottom-0 h-48"
+        <div className="absolute inset-x-0 bottom-0 h-48 z-[1]"
           style={{ background: 'linear-gradient(to top, rgba(8,31,74,0.85), transparent)' }} />
 
         {/* Hero content */}
