@@ -84,26 +84,19 @@ export function HomePage() {
               </div>
             </div>
 
-            {/* Right — contained video */}
+            {/* Right — video with blended background */}
             <div className="animate-fade-up-delay-2 relative hidden md:block">
-              <div className="relative aspect-[3/4] w-full max-w-sm ml-auto overflow-hidden rounded-sm"
-                style={{ boxShadow: '0 25px 60px rgba(0,0,0,0.4), 0 0 80px rgba(26,95,180,0.15)' }}>
+              <div className="relative aspect-[3/4] w-full max-w-md ml-auto overflow-hidden -mr-8 lg:-mr-12">
                 <video
                   className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                  style={{ objectPosition: 'center center' }}
+                  style={{ objectPosition: 'center center', mixBlendMode: 'screen' }}
                   src="/hero-video.mp4"
                   autoPlay
                   muted
                   loop
                   playsInline
                 />
-                {/* Subtle border glow */}
-                <div className="absolute inset-0 rounded-sm"
-                  style={{ boxShadow: 'inset 0 0 0 1px rgba(127,184,224,0.2)' }} />
               </div>
-              {/* Decorative accent below video */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 opacity-20 pointer-events-none"
-                style={{ background: 'linear-gradient(135deg, transparent 40%, #7fb8e0 100%)' }} />
             </div>
           </div>
         </div>
