@@ -34,97 +34,79 @@ export function HomePage() {
     <>
       {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen w-full overflow-hidden flex flex-col"
-        style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}
+        className="relative h-screen w-full overflow-hidden flex flex-col"
       >
-        {/* Subtle texture overlay */}
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'radial-gradient(circle at 70% 40%, rgba(127,184,224,0.4) 0%, transparent 50%)' }} />
+        {/* Video — full bleed background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          style={{ objectPosition: '80% center' }}
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
 
-        {/* Hero content — grid layout: text left, video right */}
-        <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-28 pb-8">
-          <div className="mx-auto max-w-7xl w-full grid items-center gap-8 md:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-            {/* Left — text */}
-            <div>
-              <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
-                <img src="/rhino-mark.svg" alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
-                <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto Mortgage Team</p>
-              </div>
+        {/* Overlay — dark on left for text readability */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, rgba(8,31,74,0.96) 0%, rgba(8,31,74,0.92) 35%, rgba(8,31,74,0.55) 58%, rgba(8,31,74,0.15) 78%, transparent 100%)' }} />
+        {/* Bottom darkening for stats */}
+        <div className="absolute inset-x-0 bottom-0 h-48"
+          style={{ background: 'linear-gradient(to top, rgba(8,31,74,0.85), transparent)' }} />
 
-              <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
-                style={{ fontSize: 'clamp(2.4rem, 6vw, 5.5rem)' }}>
-                <span className="block">Blue Rhino</span>
-                <span className="block">Mortgage</span>
-                <span className="block">Team.</span>
-              </h1>
-
-              <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
-                We work with Toronto's entrepreneurs, first-time buyers, and growing families.{' '}
-                <strong className="text-white font-semibold">Direct contact, real advice, no hand-offs.</strong>
-              </p>
-
-              <div className="animate-fade-up-delay-3 mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
-                <Link
-                  to="/about"
-                  className="group inline-flex items-center gap-2 bg-white font-body font-semibold px-5 sm:px-7 py-3 sm:py-4 text-[11px] sm:text-xs tracking-widest uppercase transition-colors"
-                  style={{ color: '#0d3d8a' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#e6f0f8'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
-                >
-                  Meet the Team
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </Link>
-                <div className="hidden sm:flex items-center gap-3">
-                  <Award className="w-8 h-8 text-white/50" />
-                  <div>
-                    <p className="text-white/60 text-xs tracking-wider uppercase leading-none">Dozens of</p>
-                    <p className="text-white/60 text-xs tracking-wider uppercase leading-none mt-0.5">Lenders</p>
-                  </div>
-                </div>
-              </div>
+        {/* Hero content */}
+        <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
+          <div className="max-w-4xl md:max-w-[52%]">
+            <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
+              <img src="/rhino-mark.svg" alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
+              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto Mortgage Team</p>
             </div>
 
-            {/* Right — video with blended background */}
-            <div className="animate-fade-up-delay-2 relative hidden md:block">
-              <div className="relative aspect-[3/4] w-full max-w-md ml-auto overflow-hidden -mr-8 lg:-mr-12">
-                <video
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                  style={{ objectPosition: 'center center', mixBlendMode: 'screen' }}
-                  src="/hero-video.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              </div>
+            <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
+              style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
+              <span className="block">Could've been</span>
+              <span className="block">any broker.</span>
+              <span className="block">Wasn't.</span>
+            </h1>
+
+            <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
+              Three agents. Dozens of lenders. One standard.{' '}
+              <strong className="text-white font-semibold">Toronto entrepreneurs, first-time buyers, growing families. We do this differently.</strong>
+            </p>
+
+            <div className="animate-fade-up-delay-3 mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+              <Link
+                to="/about"
+                className="group inline-flex items-center gap-2 bg-white font-body font-semibold px-5 sm:px-7 py-3 sm:py-4 text-[11px] sm:text-xs tracking-widest uppercase transition-colors"
+                style={{ color: '#0d3d8a' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#e6f0f8'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#fff'}
+              >
+                Meet the Team
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+              <a
+                href={`tel:${site.phone.replace(/-/g, '')}`}
+                className="group inline-flex items-center gap-2 font-body font-semibold px-5 sm:px-7 py-3 sm:py-4 text-[11px] sm:text-xs tracking-widest uppercase text-white border transition-colors"
+                style={{ borderColor: 'rgba(255,255,255,0.3)' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.7)'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.3)'}
+              >
+                {site.phone}
+              </a>
             </div>
           </div>
         </div>
 
         {/* Stats — pinned to bottom */}
         <div className="animate-fade-up-delay-4 relative z-10 px-6 sm:px-10 lg:px-16 pb-10 sm:pb-12">
-          <div className="mx-auto max-w-7xl flex flex-wrap gap-6 sm:gap-12 lg:gap-16">
+          <div className="flex flex-wrap gap-6 sm:gap-12 lg:gap-16">
             {heroStats.map((s) => (
               <div key={s.label}>
                 <p className="font-body text-white text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-none">{s.value}</p>
                 <p className="font-body text-white/50 text-[9px] sm:text-xs tracking-widest uppercase mt-1">{s.label}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Mobile video fallback — below text on small screens */}
-        <div className="animate-fade-up-delay-2 relative z-10 md:hidden px-6 pb-8">
-          <div className="relative aspect-video w-full overflow-hidden rounded-sm"
-            style={{ boxShadow: '0 15px 40px rgba(0,0,0,0.3)' }}>
-            <video
-              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-              src="/hero-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
           </div>
         </div>
       </section>
