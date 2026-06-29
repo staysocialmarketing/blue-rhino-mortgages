@@ -42,10 +42,10 @@ export function HomePage() {
           className="absolute pointer-events-none hidden md:block"
           style={{
             mixBlendMode: 'screen',
-            width: '94%',
-            maxWidth: '1294px',
-            right: '15%',
-            top: '20%',
+            width: '140%',
+            maxWidth: 'none',
+            right: '-10%',
+            top: '0%',
             objectFit: 'contain',
           }}
           src="/hero-video.mp4"
