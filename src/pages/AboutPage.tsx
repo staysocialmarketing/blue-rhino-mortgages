@@ -1,4 +1,5 @@
 import { Reveal } from '@/components/site/Reveal'
+import { RhinoWatermark } from '@/components/site/RhinoWatermark'
 import { team } from '@/lib/site'
 
 const pillars = [
@@ -165,8 +166,9 @@ export function AboutPage() {
       </section>
 
       {/* What working with us looks like */}
-      <section className="py-24" style={{ background: '#e6f0f8' }}>
-        <div className="container-x mx-auto max-w-7xl">
+      <section className="relative py-24 overflow-hidden" style={{ background: '#e6f0f8' }}>
+        <RhinoWatermark position="center-right" size="380px" opacity={0.035} />
+        <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <h2 className="font-display font-bold text-3xl md:text-4xl mb-14 max-w-xl" style={{ color: '#1a1a1a' }}>
               What working with us looks like
@@ -190,8 +192,9 @@ export function AboutPage() {
       </section>
 
       {/* Quote */}
-      <section className="py-24" style={{ background: '#0d3d8a' }}>
-        <div className="container-x mx-auto max-w-7xl">
+      <section className="relative py-24 overflow-hidden" style={{ background: '#0d3d8a' }}>
+        <RhinoWatermark position="bottom-right" size="280px" opacity={0.06} light />
+        <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <blockquote className="max-w-3xl mx-auto text-center">
               <p className="font-display font-bold text-3xl md:text-4xl text-white leading-snug">

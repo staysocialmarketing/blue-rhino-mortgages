@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/site/Reveal'
 import { ScrollVideo } from '@/components/site/ScrollVideo'
+import { RhinoWatermark } from '@/components/site/RhinoWatermark'
 import { site, team } from '@/lib/site'
 
 const services = [
@@ -182,8 +183,9 @@ export function HomePage() {
       </section>
 
       {/* ─── SERVICES ─────────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: '#e6f0f8' }}>
-        <div className="container-x mx-auto max-w-7xl">
+      <section className="relative py-24 overflow-hidden" style={{ background: '#e6f0f8' }}>
+        <RhinoWatermark position="bottom-right" size="400px" opacity={0.035} />
+        <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>What we do</p>
             <h2 className="font-display font-bold text-4xl md:text-5xl max-w-xl leading-tight" style={{ color: '#1a1a1a' }}>
@@ -213,9 +215,10 @@ export function HomePage() {
       </section>
 
       {/* ─── HOW IT WORKS ─────────────────────────────────────────────────── */}
-      <section className="py-24"
+      <section className="relative py-24 overflow-hidden"
         style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
-        <div className="container-x mx-auto max-w-7xl">
+        <RhinoWatermark position="top-right" size="500px" opacity={0.06} light />
+        <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>The process</p>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-xl leading-tight">How we work with you</h2>
@@ -265,8 +268,9 @@ export function HomePage() {
       </section>
 
       {/* ─── CTA ──────────────────────────────────────────────────────────── */}
-      <section className="py-24" style={{ background: '#1a5fb4' }}>
-        <div className="container-x mx-auto max-w-7xl text-center">
+      <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
+        <RhinoWatermark position="bottom-left" size="350px" opacity={0.07} light />
+        <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
           <Reveal>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-2xl mx-auto leading-tight">
               Ready to find out what we can do?

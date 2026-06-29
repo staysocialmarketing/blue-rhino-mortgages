@@ -1,4 +1,5 @@
 import { Reveal } from '@/components/site/Reveal'
+import { RhinoWatermark } from '@/components/site/RhinoWatermark'
 import { site } from '@/lib/site'
 
 export function ContactPage() {
@@ -62,8 +63,9 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 border-t" style={{ background: '#e6f0f8', borderColor: 'rgba(26,95,180,0.1)' }}>
-        <div className="container-x mx-auto max-w-7xl text-center">
+      <section className="relative py-20 border-t overflow-hidden" style={{ background: '#e6f0f8', borderColor: 'rgba(26,95,180,0.1)' }}>
+        <RhinoWatermark position="center-right" size="250px" opacity={0.03} />
+        <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>Blue Rhino Mortgages</p>
             <p className="font-display font-semibold" style={{ color: '#1a1a1a' }}>{site.brokerage}</p>

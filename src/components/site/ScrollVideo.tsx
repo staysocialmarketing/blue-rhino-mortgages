@@ -2,8 +2,7 @@ import { useRef, useEffect } from 'react'
 
 /**
  * Plays a video forward/backward based on scroll position.
- * The video scrubs from 0 → duration as the container scrolls
- * from entering the viewport to leaving it.
+ * Uses requestAnimationFrame + lerping for buttery-smooth scrubbing.
  */
 export function ScrollVideo({
   src,
@@ -20,29 +19,40 @@ export function ScrollVideo({
     const video = videoRef.current
     if (!container || !video) return
 
-    // Ensure the video is loaded enough to scrub
     video.pause()
 
-    const onScroll = () => {
-      if (!video.duration || !isFinite(video.duration)) return
+    let targetTime = 0
+    let currentTime = 0
+    let rafId: number
+
+    const updateScroll = () => {
+      if (!video.duration || !isFinite(video.duration)) {
+        rafId = requestAnimationFrame(updateScroll)
+        return
+      }
 
       const rect = container.getBoundingClientRect()
       const windowH = window.innerHeight
-
-      // Progress: 0 when top of container hits bottom of viewport,
-      //           1 when bottom of container hits top of viewport
       const totalTravel = windowH + rect.height
       const traveled = windowH - rect.top
       const progress = Math.max(0, Math.min(1, traveled / totalTravel))
 
-      video.currentTime = progress * video.duration
+      targetTime = progress * video.duration
+
+      // Lerp toward target for smooth motion (0.08 = smoothing factor)
+      currentTime += (targetTime - currentTime) * 0.08
+
+      // Only update if the difference is meaningful
+      if (Math.abs(currentTime - video.currentTime) > 0.01) {
+        video.currentTime = currentTime
+      }
+
+      rafId = requestAnimationFrame(updateScroll)
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true })
-    // Set initial position
-    onScroll()
+    rafId = requestAnimationFrame(updateScroll)
 
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => cancelAnimationFrame(rafId)
   }, [])
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Reveal } from '@/components/site/Reveal'
+import { RhinoWatermark } from '@/components/site/RhinoWatermark'
 import { site } from '@/lib/site'
 
 interface FAQItem {
@@ -206,8 +207,9 @@ export function FAQPage() {
       </section>
 
       {/* Still have a question */}
-      <section className="py-20" style={{ background: '#e6f0f8' }}>
-        <div className="container-x mx-auto max-w-4xl">
+      <section className="relative py-20 overflow-hidden" style={{ background: '#e6f0f8' }}>
+        <RhinoWatermark position="bottom-right" size="300px" opacity={0.035} />
+        <div className="container-x mx-auto max-w-4xl relative z-[1]">
           <Reveal>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
