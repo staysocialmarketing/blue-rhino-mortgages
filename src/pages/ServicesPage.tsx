@@ -1,5 +1,4 @@
 import { Reveal } from '@/components/site/Reveal'
-import { RhinoWatermark } from '@/components/site/RhinoWatermark'
 import { site } from '@/lib/site'
 
 const services = [
@@ -84,9 +83,8 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
-        <RhinoWatermark position="top-left" size="500px" opacity={0.08} light />
-        <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
+      <section className="py-24" style={{ background: '#1a5fb4' }}>
+        <div className="container-x mx-auto max-w-7xl text-center">
           <Reveal>
             <h2 className="font-display font-bold text-4xl text-white">Not sure where you fit?</h2>
             <p className="mt-4 text-white/70 max-w-md mx-auto">Call or email. We'll figure it out together.</p>
