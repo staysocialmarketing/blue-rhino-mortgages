@@ -42,9 +42,9 @@ export function HomePage() {
           className="absolute pointer-events-none hidden md:block"
           style={{
             mixBlendMode: 'screen',
-            width: '55%',
-            maxWidth: '750px',
-            right: '-5%',
+            width: '137%',
+            maxWidth: '1875px',
+            right: '-25%',
             top: '20%',
             objectFit: 'contain',
           }}
