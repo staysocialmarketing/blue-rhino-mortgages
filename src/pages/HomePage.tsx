@@ -64,7 +64,7 @@ export function HomePage() {
         <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-32 pb-8">
           <div className="max-w-4xl md:max-w-[52%]">
             <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
-              <img src="/rhino-mascot.jpg" alt="" className="w-5 h-5 object-contain opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
+              <img src="/rhino-mascot.png" alt="" className="w-5 h-5 object-contain opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
               <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto's Mortgage Team</p>
             </div>
 
@@ -121,7 +121,7 @@ export function HomePage() {
 
       {/* ─── TEAM ─────────────────────────────────────────────────────────── */}
       <section className="relative py-24 container-x overflow-hidden">
-        <RhinoWatermark position="top-right" size="320px" opacity={0.045} />
+        <RhinoWatermark position="top-right" size="500px" opacity={0.06} />
         <div className="mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>The team</p>
@@ -142,7 +142,7 @@ export function HomePage() {
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(26,95,180,0.1)'; (e.currentTarget as HTMLElement).style.boxShadow = '' }}
                 >
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 flex-shrink-0" style={{ background: '#e6f0f8' }}>
-                    <img src="/rhino-mascot.jpg" alt="" className="w-10 h-10 object-contain opacity-40" />
+                    <img src="/rhino-mascot.png" alt="" className="w-10 h-10 object-contain opacity-40" />
                   </div>
                   <h3 className="font-display font-bold text-xl" style={{ color: '#1a1a1a' }}>{member.name}</h3>
                   <p className="font-body text-xs mt-1 mb-4" style={{ color: '#1a5fb4' }}>{member.title}</p>
@@ -203,7 +203,7 @@ export function HomePage() {
       {/* ─── HOW IT WORKS ─────────────────────────────────────────────────── */}
       <section className="relative py-24 overflow-hidden"
         style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}>
-        <RhinoWatermark position="center-right" size="450px" opacity={0.06} light />
+        <RhinoWatermark position="center-right" size="550px" opacity={0.07} light />
         <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <p className="font-body text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#7fb8e0' }}>The process</p>
@@ -228,7 +228,7 @@ export function HomePage() {
 
       {/* ─── TOOLS STRIP ──────────────────────────────────────────────────── */}
       <section className="relative py-20 overflow-hidden" style={{ background: '#f4f7fa', borderBottom: '1px solid rgba(26,95,180,0.08)' }}>
-        <RhinoWatermark position="bottom-left" size="250px" opacity={0.03} />
+        <RhinoWatermark position="bottom-left" size="400px" opacity={0.045} />
         <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <div className="grid gap-6 sm:grid-cols-3">
@@ -256,7 +256,7 @@ export function HomePage() {
 
       {/* ─── CTA ──────────────────────────────────────────────────────────── */}
       <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
-        <RhinoWatermark position="bottom-left" size="350px" opacity={0.07} light />
+        <RhinoWatermark position="bottom-left" size="500px" opacity={0.08} light />
         <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
           <Reveal>
             <h2 className="font-display font-bold text-4xl md:text-5xl text-white max-w-2xl mx-auto leading-tight">

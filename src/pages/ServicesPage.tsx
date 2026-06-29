@@ -85,7 +85,7 @@ export function ServicesPage() {
       </section>
 
       <section className="relative py-24 overflow-hidden" style={{ background: '#1a5fb4' }}>
-        <RhinoWatermark position="top-left" size="350px" opacity={0.07} light />
+        <RhinoWatermark position="top-left" size="500px" opacity={0.08} light />
         <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
           <Reveal>
             <h2 className="font-display font-bold text-4xl text-white">Not sure where you fit?</h2>

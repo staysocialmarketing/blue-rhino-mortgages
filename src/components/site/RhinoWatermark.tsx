@@ -1,5 +1,6 @@
 /**
  * Subtle 3D rhino mascot watermark for background brand accents.
+ * Uses transparent PNGs — no background bleed.
  * Place inside a `relative overflow-hidden` container.
  *
  * - Light sections (white/grey/#e6f0f8): blue faded rhino (light=false)
@@ -8,7 +9,7 @@
 export function RhinoWatermark({
   position = 'bottom-right',
   opacity = 0.06,
-  size = '320px',
+  size = '500px',
   light = false,
 }: {
   position?: 'bottom-right' | 'top-right' | 'bottom-left' | 'top-left' | 'center-right'
@@ -17,16 +18,16 @@ export function RhinoWatermark({
   light?: boolean
 }) {
   const posStyles: Record<string, React.CSSProperties> = {
-    'bottom-right': { bottom: '-8%', right: '-3%' },
-    'top-right': { top: '-8%', right: '-3%' },
-    'bottom-left': { bottom: '-8%', left: '-3%' },
-    'top-left': { top: '-8%', left: '-3%' },
-    'center-right': { top: '50%', right: '-3%', transform: 'translateY(-50%)' },
+    'bottom-right': { bottom: '-10%', right: '-5%' },
+    'top-right': { top: '-10%', right: '-5%' },
+    'bottom-left': { bottom: '-10%', left: '-5%' },
+    'top-left': { top: '-10%', left: '-5%' },
+    'center-right': { top: '50%', right: '-5%', transform: 'translateY(-50%)' },
   }
 
   return (
     <img
-      src="/rhino-mascot.jpg"
+      src={light ? '/rhino-mascot-white.png' : '/rhino-mascot.png'}
       alt=""
       aria-hidden="true"
       className="absolute pointer-events-none select-none"
@@ -34,8 +35,6 @@ export function RhinoWatermark({
         width: size,
         height: 'auto',
         opacity,
-        // White-bg mascot: on dark sections, invert to white; on light sections, keep blue
-        filter: light ? 'brightness(0) invert(1)' : undefined,
         ...posStyles[position],
       }}
     />

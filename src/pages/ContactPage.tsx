@@ -64,7 +64,7 @@ export function ContactPage() {
       </section>
 
       <section className="relative py-20 border-t overflow-hidden" style={{ background: '#e6f0f8', borderColor: 'rgba(26,95,180,0.1)' }}>
-        <RhinoWatermark position="center-right" size="250px" opacity={0.03} />
+        <RhinoWatermark position="center-right" size="400px" opacity={0.05} />
         <div className="container-x mx-auto max-w-7xl text-center relative z-[1]">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] mb-4" style={{ color: '#1a5fb4' }}>Blue Rhino Mortgages</p>

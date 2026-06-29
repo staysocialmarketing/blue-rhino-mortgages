@@ -208,7 +208,7 @@ export function FAQPage() {
 
       {/* Still have a question */}
       <section className="relative py-20 overflow-hidden" style={{ background: '#e6f0f8' }}>
-        <RhinoWatermark position="bottom-right" size="300px" opacity={0.035} />
+        <RhinoWatermark position="bottom-right" size="450px" opacity={0.05} />
         <div className="container-x mx-auto max-w-4xl relative z-[1]">
           <Reveal>
             <div className="grid md:grid-cols-2 gap-8 items-center">
