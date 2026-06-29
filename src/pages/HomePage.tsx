@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, Award } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/site/Reveal'
 import { site, team } from '@/lib/site'
 
