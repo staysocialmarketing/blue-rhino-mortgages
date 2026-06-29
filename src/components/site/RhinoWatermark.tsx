@@ -1,10 +1,14 @@
 /**
- * Subtle rhino silhouette watermark for background brand accents.
+ * Subtle 3D rhino mascot watermark for background brand accents.
+ * Uses the actual mascot images, not the generic SVG icon.
  * Place inside a `relative overflow-hidden` container.
+ *
+ * - Light sections (white/grey/#e6f0f8): use light=false (white-bg mascot)
+ * - Dark sections (blue gradient): use light=true (dark-bg mascot + screen blend)
  */
 export function RhinoWatermark({
   position = 'bottom-right',
-  opacity = 0.04,
+  opacity = 0.06,
   size = '320px',
   light = false,
 }: {
@@ -14,16 +18,16 @@ export function RhinoWatermark({
   light?: boolean
 }) {
   const posStyles: Record<string, React.CSSProperties> = {
-    'bottom-right': { bottom: '-10%', right: '-5%' },
-    'top-right': { top: '-10%', right: '-5%' },
-    'bottom-left': { bottom: '-10%', left: '-5%' },
-    'top-left': { top: '-10%', left: '-5%' },
+    'bottom-right': { bottom: '-8%', right: '-3%' },
+    'top-right': { top: '-8%', right: '-3%' },
+    'bottom-left': { bottom: '-8%', left: '-3%' },
+    'top-left': { top: '-8%', left: '-3%' },
     'center-right': { top: '50%', right: '-3%', transform: 'translateY(-50%)' },
   }
 
   return (
     <img
-      src="/rhino-mark.svg"
+      src={light ? '/rhino-mascot-dark.jpg' : '/rhino-mascot.jpg'}
       alt=""
       aria-hidden="true"
       className="absolute pointer-events-none select-none"
@@ -31,7 +35,7 @@ export function RhinoWatermark({
         width: size,
         height: 'auto',
         opacity,
-        filter: light ? 'brightness(0) invert(1)' : undefined,
+        mixBlendMode: light ? 'screen' : undefined,
         ...posStyles[position],
       }}
     />
