@@ -9,10 +9,10 @@ export function ContactPage() {
           <Reveal>
             <p className="text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#7fb8e0' }}>Contact</p>
             <h1 className="font-display font-bold text-5xl md:text-6xl xl:text-7xl text-white leading-[1.05] max-w-3xl">
-              Talk to Scott directly.
+              Talk to us directly.
             </h1>
             <p className="mt-8 text-white/70 max-w-xl leading-relaxed text-lg">
-              No forms, no phone trees. Call or email and you'll hear from a person who actually knows what they're doing.
+              No forms, no phone trees. Call or email and you'll reach an agent who actually knows your file.
             </p>
           </Reveal>
         </div>

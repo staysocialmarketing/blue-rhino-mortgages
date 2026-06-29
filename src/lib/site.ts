@@ -54,7 +54,7 @@ export const team: TeamMember[] = [
 
 export const site = {
   name: 'Blue Rhino Mortgages',
-  tagline: "Could've been any broker. Wasn't.",
+  tagline: 'Built different. On purpose.',
   brokerage: 'Premiere Mortgage Centre Inc.',
   brokerageAddress: '1655 Dupont St, Suite 101, Toronto, ON M6P 3T1',
   brokerageLicense: '10317',

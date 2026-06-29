@@ -195,7 +195,7 @@ export function AboutPage() {
           <Reveal>
             <blockquote className="max-w-3xl mx-auto text-center">
               <p className="font-display font-bold text-3xl md:text-4xl text-white leading-snug">
-                "Could've been any broker. Wasn't."
+                "Built different. On purpose."
               </p>
               <p className="mt-8 font-body text-xs uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
                 The Blue Rhino Standard
