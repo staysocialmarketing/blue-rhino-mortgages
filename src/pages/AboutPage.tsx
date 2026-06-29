@@ -36,10 +36,7 @@ export function AboutPage() {
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-16 items-start">
           <Reveal>
             <div className="aspect-[4/3] flex items-center justify-center relative overflow-hidden" style={{ background: '#e6f0f8' }}>
-              <img src="/rhino-mark.svg" alt="" className="absolute w-2/3 opacity-10" />
-              <div className="relative z-10 text-center p-8">
-                <img src="/logo-color.png" alt="Blue Rhino Mortgages" className="h-16 w-auto object-contain mx-auto" />
-              </div>
+              <img src="/rhino-mascot.jpg" alt="Blue Rhino Mascot" className="absolute inset-0 w-full h-full object-contain p-6" />
             </div>
           </Reveal>
 
@@ -86,7 +83,7 @@ export function AboutPage() {
                   {/* Photo placeholder */}
                   <div className="aspect-square flex items-center justify-center relative overflow-hidden max-w-[240px]"
                     style={{ background: 'linear-gradient(135deg, #e6f0f8 0%, #d0e4f4 100%)' }}>
-                    <img src="/rhino-mark.svg" alt="" className="absolute w-2/3 opacity-10" />
+                    <img src="/rhino-mascot.jpg" alt="" className="absolute w-2/3 opacity-10" />
                     <div className="relative z-10 text-center">
                       <p className="font-display font-bold text-lg" style={{ color: '#1a5fb4' }}>
                         {member.name.split(' ')[0]}
@@ -167,7 +164,7 @@ export function AboutPage() {
 
       {/* What working with us looks like */}
       <section className="relative py-24 overflow-hidden" style={{ background: '#e6f0f8' }}>
-        <RhinoWatermark position="center-right" size="380px" opacity={0.035} />
+        <RhinoWatermark position="top-right" size="300px" opacity={0.04} />
         <div className="container-x mx-auto max-w-7xl relative z-[1]">
           <Reveal>
             <h2 className="font-display font-bold text-3xl md:text-4xl mb-14 max-w-xl" style={{ color: '#1a1a1a' }}>

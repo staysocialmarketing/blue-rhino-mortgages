@@ -1,10 +1,9 @@
 /**
  * Subtle 3D rhino mascot watermark for background brand accents.
- * Uses the actual mascot images, not the generic SVG icon.
  * Place inside a `relative overflow-hidden` container.
  *
- * - Light sections (white/grey/#e6f0f8): use light=false (white-bg mascot)
- * - Dark sections (blue gradient): use light=true (dark-bg mascot + screen blend)
+ * - Light sections (white/grey/#e6f0f8): blue faded rhino (light=false)
+ * - Dark sections (blue gradient): white faded rhino (light=true)
  */
 export function RhinoWatermark({
   position = 'bottom-right',
@@ -27,7 +26,7 @@ export function RhinoWatermark({
 
   return (
     <img
-      src={light ? '/rhino-mascot-dark.jpg' : '/rhino-mascot.jpg'}
+      src="/rhino-mascot.jpg"
       alt=""
       aria-hidden="true"
       className="absolute pointer-events-none select-none"
@@ -35,7 +34,8 @@ export function RhinoWatermark({
         width: size,
         height: 'auto',
         opacity,
-        mixBlendMode: light ? 'screen' : undefined,
+        // White-bg mascot: on dark sections, invert to white; on light sections, keep blue
+        filter: light ? 'brightness(0) invert(1)' : undefined,
         ...posStyles[position],
       }}
     />
