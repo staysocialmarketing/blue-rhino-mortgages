@@ -146,7 +146,7 @@ function AffordabilityCalc() {
         </p>
       </div>
       <p className="font-body text-xs mt-3" style={{ color: 'rgba(26,26,26,0.4)' }}>
-        Based on OSFI stress test. Self-employed income may be assessed differently — ask us.
+        Based on OSFI stress test. Self-employed income may be assessed differently. Ask us.
       </p>
     </div>
   )
@@ -214,7 +214,7 @@ function CMHCCalc() {
         )}
       </div>
       <p className="font-body text-xs mt-3" style={{ color: 'rgba(26,26,26,0.4)' }}>
-        CMHC insurance is added to your mortgage and amortized. Ontario also charges PST on the premium — ask us for the full picture.
+        CMHC insurance is added to your mortgage and amortized. Ontario also charges PST on the premium. Ask us for the full picture.
       </p>
     </div>
   )
@@ -237,7 +237,7 @@ export function CalculatorsPage() {
               Mortgage calculators.
             </h1>
             <p className="mt-6 font-body text-lg text-white/70 max-w-xl leading-relaxed">
-              Run your own numbers before we talk. These are directional — for real numbers specific to your file, give us a call.
+              Run your own numbers before we talk. These are directional. For real numbers specific to your file, give us a call.
             </p>
           </Reveal>
         </div>
@@ -280,7 +280,7 @@ export function CalculatorsPage() {
               Want to see your actual numbers?
             </h2>
             <p className="font-body max-w-lg mx-auto leading-relaxed mb-8" style={{ color: '#1a1a1a', opacity: 0.65 }}>
-              Calculators give you a direction. We give you a real picture — rate options, lender fit, and a plan.
+              Calculators give you a direction. We give you a real picture: rate options, lender fit, and a plan.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={`tel:${site.phone.replace(/-/g, '')}`}

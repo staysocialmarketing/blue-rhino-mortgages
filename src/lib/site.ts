@@ -33,14 +33,14 @@ export const team: TeamMember[] = [
     title: 'Mortgage Agent, Level 2',
     email: 'meghna@bluerhinomortgages.com',
     specialty: 'Newcomers to Canada · Alternative Lending · Pre-Approvals',
-    bio: 'Meghna specializes in serving clients whose situations don\'t fit the standard bank mould — newcomers, those with non-traditional income, and buyers who need a smarter path to approval.',
+    bio: 'Meghna specializes in serving clients whose situations don\'t fit the standard bank mould: newcomers, those with non-traditional income, and buyers who need a smarter path to approval.',
     role: 'agent',
   },
   {
     name: 'Mitt Kapadia',
     title: 'Technology Manager',
     specialty: 'Operations · Technology',
-    bio: 'Mitt keeps the Blue Rhino engine running — from systems to client processes, ensuring every file moves efficiently from start to close.',
+    bio: 'Mitt keeps the Blue Rhino engine running. From systems to client processes, he ensures every file moves efficiently from start to close.',
     role: 'support',
   },
   {

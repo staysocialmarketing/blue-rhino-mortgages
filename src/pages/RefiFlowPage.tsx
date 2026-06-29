@@ -20,7 +20,7 @@ const questions: Question[] = [
       { label: 'Access equity (renovations, investment, etc.)', value: 'equity' },
       { label: 'Pay off my mortgage faster', value: 'payoff' },
       { label: 'Consolidate debt', value: 'debt' },
-      { label: 'Not sure — just exploring', value: 'explore' },
+      { label: 'Not sure, just exploring', value: 'explore' },
     ],
   },
   {
@@ -85,7 +85,7 @@ function getResult(answers: Answers) {
   if (lowRate && earlyBreak) {
     return {
       verdict: 'Probably not worth it right now.',
-      detail: 'Your current rate is already low, and breaking early means a penalty that likely wipes out any savings. That said, if your goal is equity access or debt consolidation, the math might still work — it depends on the penalty amount and what you\'d do with the funds.',
+      detail: 'Your current rate is already low, and breaking early means a penalty that likely wipes out any savings. That said, if your goal is equity access or debt consolidation, the math might still work. It depends on the penalty amount and what you\'d do with the funds.',
       cta: 'Let\'s run the actual penalty number.',
       tone: 'caution',
     }
@@ -94,7 +94,7 @@ function getResult(answers: Answers) {
   if (highRate && (remaining === 'under6' || remaining === '6to12')) {
     return {
       verdict: 'Strong case for refinancing.',
-      detail: 'A high rate with your term ending soon is exactly the scenario where refinancing makes the most sense. You\'re close to the end of your penalty window, and today\'s lender landscape likely has better options for you. We\'d want to look at lender options across dozens of sources and structure the best fit.',
+      detail: 'A high rate with your term ending soon is exactly the scenario where refinancing makes the most sense. You\'re close to the end of your penalty window, and today\'s lender market likely has better options for you. We\'d want to look at lender options across dozens of sources and structure the best fit.',
       cta: 'Let\'s find you better options.',
       tone: 'positive',
     }
@@ -103,7 +103,7 @@ function getResult(answers: Answers) {
   if (goal === 'equity' || goal === 'debt') {
     return {
       verdict: 'Worth a serious look.',
-      detail: 'Equity access and debt consolidation refinances are often worth the penalty cost — especially when the resulting cash flow improvement is significant. The key calculation is whether the penalty is less than 12–18 months of interest savings (or the value of the capital you\'re accessing).',
+      detail: 'Equity access and debt consolidation refinances are often worth the penalty cost, especially when the resulting cash flow improvement is significant. The key calculation is whether the penalty is less than 12 to 18 months of interest savings (or the value of the capital you\'re accessing).',
       cta: 'Let\'s run the numbers on your file.',
       tone: 'positive',
     }
@@ -112,7 +112,7 @@ function getResult(answers: Answers) {
   if (earlyBreak && !highRate) {
     return {
       verdict: 'The math needs work.',
-      detail: 'Breaking 1–2+ years early typically comes with a meaningful penalty — usually the greater of 3 months\' interest or the Interest Rate Differential. We\'d want to calculate your exact penalty before recommending you move. In some cases it still makes sense, but you need the real numbers first.',
+      detail: 'Breaking 1 to 2+ years early typically comes with a meaningful penalty, usually the greater of 3 months\' interest or the Interest Rate Differential. We\'d want to calculate your exact penalty before recommending you move. In some cases it still makes sense, but you need the real numbers first.',
       cta: 'Let\'s calculate your penalty first.',
       tone: 'neutral',
     }
@@ -120,15 +120,15 @@ function getResult(answers: Answers) {
 
   if (selfEmployed) {
     return {
-      verdict: 'Likely yes — with the right lender.',
-      detail: 'Self-employed borrowers are often underserved by the big banks at renewal. Alternative lenders and mono-lenders may have significantly better options for your structure — especially if your income is through corporate draws or retained earnings. This is where we do our best work.',
+      verdict: 'Likely yes, with the right lender.',
+      detail: 'Self-employed borrowers are often underserved by the big banks at renewal. Alternative lenders and mono-lenders may have significantly better options for your structure, especially if your income is through corporate draws or retained earnings. This is where we do our best work.',
       cta: 'Tell us about your income structure.',
       tone: 'positive',
     }
   }
 
   return {
-    verdict: 'It depends — but let\'s find out.',
+    verdict: 'It depends, but let\'s find out.',
     detail: 'Your answers suggest a scenario that could go either way. The real answer lives in your penalty amount, the current rate spread, and what lenders are offering for your specific profile right now. A 20-minute call will give you a clear answer.',
     cta: 'Let\'s talk it through.',
     tone: 'neutral',
@@ -179,7 +179,7 @@ export function RefiFlowPage() {
               Should I refinance?
             </h1>
             <p className="mt-6 font-body text-lg text-white/70 max-w-xl leading-relaxed">
-              Five questions. A real answer — not a generic yes or no, but the logic behind your specific situation.
+              Five questions. A real answer, not a generic yes or no, but the logic behind your specific situation.
             </p>
           </Reveal>
         </div>
@@ -277,7 +277,7 @@ export function RefiFlowPage() {
 
               {/* Disclaimer */}
               <p className="font-body text-xs mt-4" style={{ color: 'rgba(26,26,26,0.4)' }}>
-                This is directional guidance based on general patterns — not financial advice specific to your file. Actual recommendations depend on your full mortgage details, credit profile, and current lender landscape. Talk to one of our agents for the real picture.
+                This is directional guidance based on general patterns, not financial advice specific to your file. Actual recommendations depend on your full mortgage details, credit profile, and current lender market. Talk to one of our agents for the real picture.
               </p>
             </Reveal>
           )}

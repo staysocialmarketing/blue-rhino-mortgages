@@ -5,13 +5,13 @@ const services = [
   {
     title: 'First-Time Buyers',
     sub: 'The Toronto market decoded.',
-    body: "Condos, freehold, entry-level — we walk you through every step. Pre-qualification, lender shopping, and closing support. We make sure you understand the process before you're in it.",
+    body: "Condos, freehold, entry-level. We walk you through every step: pre-qualification, lender shopping, and closing support. We make sure you understand the process before you're in it.",
     bullets: ['Pre-qualification without commitment', 'First Home Savings Account guidance', 'Condo vs. freehold comparison', 'CMHC and down payment options'],
   },
   {
     title: 'Refinancing',
     sub: 'When it makes sense to revisit.',
-    body: "Refinancing isn't always the right move. We run the actual numbers — penalty calculation, break-even timeline, long-term savings — and tell you honestly whether it makes sense.",
+    body: "Refinancing isn't always the right move. We run the actual numbers: penalty calculation, break-even timeline, long-term savings. Then we tell you honestly whether it makes sense.",
     bullets: ['Rate and term refinance', 'Cash-out for renovations or investments', 'Penalty analysis included', 'Short vs. long-term comparison'],
   },
   {
@@ -29,7 +29,7 @@ const services = [
   {
     title: 'Self-Employed Mortgages',
     sub: "Banks don't understand your income. We do.",
-    body: "Corporate draws, retained earnings, T1 generals, stated income programs — we know how to present your file to the right lender. The bank said no. We've heard that before.",
+    body: "Corporate draws, retained earnings, T1 generals, stated income programs. We know how to present your file to the right lender. The bank said no. We've heard that before.",
     bullets: ['T1 general income qualification', 'Corporate structure analysis', 'Stated income lender matching', "Alt-lending options when traditional doesn't fit"],
   },
   {
@@ -49,7 +49,7 @@ export function ServicesPage() {
             <p className="text-xs uppercase tracking-[0.3em] mb-6" style={{ color: '#7fb8e0' }}>Services</p>
             <h1 className="font-display font-bold text-5xl md:text-6xl text-white leading-[1.05] max-w-3xl">What we actually do.</h1>
             <p className="mt-8 text-white/70 max-w-xl leading-relaxed text-lg">
-              Six ways we work with clients. Every file is different — this is where we start.
+              Six ways we work with clients. Every file is different. This is where we start.
             </p>
           </Reveal>
         </div>

@@ -3,7 +3,7 @@ import { site } from '@/lib/site'
 
 const guides = [
   { category: 'Self-Employed', title: 'How your income actually gets assessed', blurb: 'Banks misread self-employed income constantly. This breaks down T1 generals, corporate draws, and stated income options.' },
-  { category: 'First-Time Buyers', title: 'Condo vs. freehold in Toronto', blurb: 'Not just a lifestyle question — maintenance fees, appreciation history, and how each type affects your qualification.' },
+  { category: 'First-Time Buyers', title: 'Condo vs. freehold in Toronto', blurb: 'Not just a lifestyle question. Maintenance fees, appreciation history, and how each type affects your qualification.' },
   { category: 'Refinancing', title: 'When breaking your mortgage actually makes sense', blurb: 'Penalties are real. So is the math. This walks through the break-even calculation and when refinancing wins.' },
   { category: 'Market', title: 'What a Bank of Canada rate change means for you', blurb: 'Through the lens of someone with a variable rate, a renewal coming up, or a business that owns real estate.' },
   { category: 'Pre-Qualification', title: 'Pre-qualification vs. pre-approval: what actually matters', blurb: 'The real differences, what each one commits you to, and why a proper pre-qualification with a mortgage agent wins.' },

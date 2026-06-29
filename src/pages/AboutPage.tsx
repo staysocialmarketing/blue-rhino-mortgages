@@ -4,7 +4,7 @@ import { team } from '@/lib/site'
 const pillars = [
   { title: 'Entrepreneur first', body: 'Building a business teaches you how to solve problems with what you actually have. That mindset is in every file we work.' },
   { title: 'Direct contact', body: 'You know your agent. Not an assistant, not a call centre. The person who knows your file is the person you talk to.' },
-  { title: 'Toronto market depth', body: 'We know this market — condos, freehold, income properties, the self-employed buyer the bank turned down.' },
+  { title: 'Toronto market depth', body: 'We know this market. Condos, freehold, income properties, the self-employed buyer the bank turned down.' },
   { title: 'Straight talk', body: 'We tell you what\'s realistic. If something doesn\'t make sense for you, we say so. Trust is built on honesty, not on closes.' },
 ]
 
@@ -24,7 +24,7 @@ export function AboutPage() {
               The Blue Rhino way.
             </h1>
             <p className="mt-8 font-body text-lg text-white/70 max-w-2xl leading-relaxed">
-              A bold name for a specific reason. Powerful, thick-skinned, moves with intention — and completely unexpected in an industry full of banks.
+              A bold name for a specific reason. Powerful, thick-skinned, moves with intention, and completely unexpected in an industry full of banks.
             </p>
           </Reveal>
         </div>
@@ -55,7 +55,7 @@ export function AboutPage() {
             </Reveal>
             <Reveal delay={140}>
               <p className="font-body leading-relaxed" style={{ color: '#1a1a1a', opacity: 0.7 }}>
-                The team is built around entrepreneurs, self-employed professionals, first-time buyers, and anyone whose situation the banks haven't bothered to understand. We operate under Premiere Mortgage Centre, giving every client access to dozens of lenders — banks, credit unions, mono-lenders, and alternative options.
+                The team is built around entrepreneurs, self-employed professionals, first-time buyers, and anyone whose situation the banks haven't bothered to understand. We operate under Premiere Mortgage Centre, giving every client access to dozens of lenders: banks, credit unions, mono-lenders, and alternative options.
               </p>
             </Reveal>
             <Reveal delay={200}>

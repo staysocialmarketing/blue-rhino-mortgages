@@ -5,17 +5,17 @@ import { site, team } from '@/lib/site'
 
 const services = [
   { title: 'First-Time Buyers', desc: 'Condos, entry-level homes, and the Toronto market decoded. We help you qualify, compare, and close with confidence.' },
-  { title: 'Refinancing', desc: 'Lower your rate, unlock equity, or adjust your term. We run the numbers and show you when it actually makes sense.' },
+  { title: 'Refinancing', desc: 'Lower your rate, access equity, or adjust your term. We run the numbers and show you when it actually makes sense.' },
   { title: 'Equity Takeouts', desc: 'Your home is working capital. Access equity for renovations, investments, or business growth.' },
   { title: 'Debt Consolidation', desc: 'Combine high-interest debt into one manageable payment. Better cash flow. One lender.' },
-  { title: 'Self-Employed', desc: "Banks misread self-employed income. We understand T1s, corporate draws, and retained earnings — and we get you approved." },
-  { title: 'Pre-Qualification', desc: 'Know your numbers before you shop. A clear picture of what we can do for you — no commitment required.' },
+  { title: 'Self-Employed', desc: "Banks misread self-employed income. We understand T1s, corporate draws, and retained earnings, and we get you approved." },
+  { title: 'Pre-Qualification', desc: 'Know your numbers before you shop. A clear picture of what we can do for you. No commitment required.' },
 ]
 
 const steps = [
   { n: '01', title: 'The conversation', body: 'A relaxed call about where you are and what you\'re working toward. No forms, no pressure.' },
-  { n: '02', title: 'The review', body: 'We look at the full picture: income, debts, goals, and the lender landscape for your situation right now.' },
-  { n: '03', title: 'The search', body: 'We shop across dozens of lenders and structure what genuinely fits — not what\'s easiest to place.' },
+  { n: '02', title: 'The review', body: 'We look at the full picture: income, debts, goals, and the lender market for your situation right now.' },
+  { n: '03', title: 'The search', body: 'We shop across dozens of lenders and structure what genuinely fits. Not what\'s easiest to place.' },
   { n: '04', title: 'Your options', body: 'You see real choices, explained plainly. Nothing moves until you\'re comfortable.' },
   { n: '05', title: 'The close', body: 'We handle the paperwork, coordinate with the lender, and keep you updated at every step.' },
   { n: '06', title: 'After closing', body: 'The relationship doesn\'t end at closing. We stay available for renewals, refinancing, and anything that comes up.' },
@@ -70,7 +70,7 @@ export function HomePage() {
             </h1>
 
             <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
-              We work with Toronto's entrepreneurs, first-time buyers, and growing families —{' '}
+              We work with Toronto's entrepreneurs, first-time buyers, and growing families.{' '}
               <strong className="text-white font-semibold">direct contact, real advice, no hand-offs.</strong>
             </p>
 
@@ -221,8 +221,8 @@ export function HomePage() {
             <div className="grid gap-6 sm:grid-cols-3">
               {[
                 { title: 'Mortgage Calculators', desc: 'Payment, affordability, CMHC, and more. Know your numbers before we talk.', href: '/calculators', cta: 'Open calculators' },
-                { title: 'Should I Refinance?', desc: 'Answer a few questions. We\'ll tell you if it makes sense — and by how much.', href: '/should-i-refinance', cta: 'Start the flow' },
-                { title: 'Common Questions', desc: 'Rates, pre-approval, self-employed income, closing costs — answered plainly.', href: '/faq', cta: 'Browse FAQ' },
+                { title: 'Should I Refinance?', desc: 'Answer a few questions. We\'ll tell you if it makes sense, and by how much.', href: '/should-i-refinance', cta: 'Start the flow' },
+                { title: 'Common Questions', desc: 'Rates, pre-approval, self-employed income, closing costs. Answered plainly.', href: '/faq', cta: 'Browse FAQ' },
               ].map((tool, i) => (
                 <Reveal key={tool.title} delay={i * 80}>
                   <Link to={tool.href} className="block bg-white border p-8 transition-all"
