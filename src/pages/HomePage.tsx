@@ -32,16 +32,13 @@ const heroStats = [
 export function HomePage() {
   return (
     <>
-      {/* ─── HERO ────────────────────────────────────────────────────────── */}
+      {/* ─── VIDEO HERO ───────────────────────────────────────────────────── */}
       <section
         className="relative h-screen w-full overflow-hidden flex flex-col"
         style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}
       >
-        {/* Rhino mascot — positioned right, shifted down */}
-        <img
-          src="/rhino-mascot-dark.jpg"
-          alt=""
-          aria-hidden
+        {/* Video rhino — positioned right, blend removes black bg */}
+        <video
           className="absolute pointer-events-none hidden md:block"
           style={{
             mixBlendMode: 'screen',
@@ -51,6 +48,11 @@ export function HomePage() {
             top: '20%',
             objectFit: 'contain',
           }}
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
 
         {/* Bottom darkening for stats */}
