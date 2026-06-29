@@ -42,9 +42,9 @@ export function HomePage() {
           className="absolute pointer-events-none hidden md:block"
           style={{
             mixBlendMode: 'screen',
-            width: '125%',
+            width: '120%',
             maxWidth: 'none',
-            right: '-18%',
+            right: '-22%',
             top: '0%',
             objectFit: 'contain',
           }}
@@ -60,15 +60,15 @@ export function HomePage() {
           style={{ background: 'linear-gradient(to top, rgba(8,31,74,0.85), transparent)' }} />
 
         {/* Hero content */}
-        <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-24 pb-8">
+        <div className="relative z-10 flex flex-col justify-center flex-1 px-6 sm:px-10 lg:px-16 pt-32 pb-8">
           <div className="max-w-4xl md:max-w-[52%]">
             <div className="animate-fade-up flex items-center gap-3 mb-6 lg:mb-8">
               <img src="/rhino-mark.svg" alt="" className="w-4 h-4 opacity-70" style={{ filter: 'brightness(0) invert(1)' }} />
-              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto Mortgage Team</p>
+              <p className="font-body text-white/70 text-xs sm:text-sm tracking-[0.3em] uppercase">Toronto's Mortgage Team</p>
             </div>
 
             <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
-              style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
+              style={{ fontSize: 'clamp(2.6rem, 7.5vw, 6.5rem)' }}>
               <span className="block">Built</span>
               <span className="block">different.</span>
               <span className="block">On purpose.</span>
@@ -76,7 +76,9 @@ export function HomePage() {
 
             <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
               Three agents. Dozens of lenders. One standard.{' '}
-              <strong className="text-white font-semibold">Toronto entrepreneurs, first-time buyers, growing families. We do this differently.</strong>
+              Toronto entrepreneurs, first-time buyers, growing families.
+              <br />
+              <strong className="text-white font-semibold">We do this differently.</strong>
             </p>
 
             <div className="animate-fade-up-delay-3 mt-8 lg:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
