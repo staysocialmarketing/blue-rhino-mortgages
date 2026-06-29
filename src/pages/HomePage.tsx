@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/site/Reveal'
+import { ScrollVideo } from '@/components/site/ScrollVideo'
 import { site, team } from '@/lib/site'
 
 const services = [
@@ -164,6 +165,19 @@ export function HomePage() {
               Full team & story →
             </Link>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ─── SCROLL RHINO ───────────────────────────────────────────────── */}
+      <section
+        className="relative py-0 overflow-hidden"
+        style={{ background: 'linear-gradient(150deg, #081f4a 0%, #0d3d8a 50%, #1a5fb4 100%)' }}
+      >
+        <div className="mx-auto max-w-3xl">
+          <ScrollVideo
+            src="/hero-video.mp4"
+            className="w-full aspect-square md:aspect-[16/10]"
+          />
         </div>
       </section>
 
