@@ -64,9 +64,9 @@ export function HomePage() {
 
             <h1 className="animate-fade-up-delay-1 font-display font-bold text-white uppercase leading-[0.92] tracking-tight"
               style={{ fontSize: 'clamp(2.8rem, 8vw, 7rem)' }}>
-              <span className="block">Could've been</span>
-              <span className="block">any broker.</span>
-              <span className="block">Wasn't.</span>
+              <span className="block">Built</span>
+              <span className="block">different.</span>
+              <span className="block">On purpose.</span>
             </h1>
 
             <p className="animate-fade-up-delay-2 font-body text-white/70 text-sm sm:text-base leading-relaxed max-w-md mt-6 lg:mt-8">
